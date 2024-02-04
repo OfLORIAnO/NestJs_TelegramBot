@@ -1,13 +1,25 @@
 import { Markup } from 'telegraf';
-import { TodoActionsEnum } from './types';
+import { TodoActionsTextEnum, TodoActionsTypeEnum } from './types';
 
 export function actionButtons() {
   return Markup.keyboard(
     [
-      Markup.button.callback(TodoActionsEnum.getTodos, 'list'),
-      Markup.button.callback(TodoActionsEnum.done, 'done'),
-      Markup.button.callback(TodoActionsEnum.edit, 'edit'),
-      Markup.button.callback(TodoActionsEnum.delete, 'delete'),
+      Markup.button.callback(
+        TodoActionsTextEnum.getTodos,
+        TodoActionsTypeEnum.getTodos,
+      ),
+      Markup.button.callback(
+        TodoActionsTextEnum.done,
+        TodoActionsTypeEnum.done,
+      ),
+      Markup.button.callback(
+        TodoActionsTextEnum.edit,
+        TodoActionsTypeEnum.edit,
+      ),
+      Markup.button.callback(
+        TodoActionsTextEnum.delete,
+        TodoActionsTypeEnum.delete,
+      ),
     ],
     {
       columns: 2,
